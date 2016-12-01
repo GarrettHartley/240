@@ -1,0 +1,33 @@
+1425957236204	Rename type 'Get_sampleImage_param'
+1425957268085	Rename type 'Get_sampleImage_result'
+1425957302727	Rename type 'Download_batch_param'
+1425957480167	Rename type 'Download_batch_result'
+1425957497709	Rename type 'Get_fields_param'
+1425957519150	Rename type 'Get_fields_result'
+1425957543166	Rename type 'Get_projects_result'
+1425957557475	Rename type 'Get_projects_param'
+1425957568252	Rename type 'Search_param'
+1425957578610	Rename type 'Search_result'
+1425957590308	Rename type 'Submit_batch_param'
+1425957605122	Rename type 'Submit_batch_result'
+1425957616017	Rename type 'Validate_user_param'
+1425957629203	Rename type 'Validate_user_result'
+1425957944991	Rename method 'get_ImgURL_by_ID'
+1425957964893	Rename method 'get_projectID_by_batchID'
+1425958001677	Rename method 'Get_single_batch'
+1425958108005	Rename method 'get_first_fieldID'
+1425959044534	Move compilation unit
+1425959134080	Rename field 'recordsPerImage'
+1425959280594	Delete element
+1425961020864	Rename local variable 'batch_result'
+1425961285254	Move package
+1426018597268	Move compilation units
+1426018601020	Delete element
+1426018771836	Delete element
+1426018870024	Delete element
+1426018942429	Delete element
+1426019043694	Move compilation unit
+1426019055461	Move compilation unit
+1426019060997	Move compilation unit
+1426028843829	Rename method 'get_userID'
+1426037619321	Rename package 'server.database.DAO'

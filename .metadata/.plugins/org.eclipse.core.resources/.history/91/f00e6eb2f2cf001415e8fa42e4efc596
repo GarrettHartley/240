@@ -1,0 +1,242 @@
+package searchGui;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.util.ArrayList;
+
+import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import shared.communicationClasses.GetFieldsParam;
+import shared.communicationClasses.GetFieldsResult;
+import shared.communicationClasses.GetProjectsParam;
+import shared.communicationClasses.GetProjectsResult;
+import shared.communicationClasses.ValidateUserParam;
+import shared.modelClasses.Field;
+import client.ClientCommunicator;
+import client.ClientException;
+
+public class SearchFrame extends JFrame {
+
+	public static JFrame getSearchFrame() {
+		return searchFrame;
+	}
+
+
+	public static void setSearchFrame(JFrame searchFrame) {
+		SearchFrame.searchFrame = searchFrame;
+	}
+
+
+	static JFrame searchFrame = new JFrame("Search Gui");
+	static JButton search = new JButton("Search");
+	ArrayList<JPanel> panels = new ArrayList<JPanel>();
+	JTextPane valuesInput = new JTextPane();
+	JTextPane results = new JTextPane();
+	JPanel resultPanel = new JPanel();
+	JList images = new JList();
+
+	public JPanel getResultPanel() {
+		return resultPanel;
+	}
+
+
+	public void setResultPanel(JPanel resultPanel) {
+		this.resultPanel = resultPanel;
+	}
+
+
+	public JTextPane getResults() {
+		return results;
+	}
+
+
+	public void setResults(JTextPane results) {
+		this.results = results;
+	}
+
+
+	public JTextPane getValuesInput() {
+		return valuesInput;
+	}
+
+
+	public void setValuesInput(JTextPane valuesInput) {
+		this.valuesInput = valuesInput;
+	}
+
+
+	public ArrayList<JPanel> getPanels() {
+		return panels;
+	}
+
+
+	public void setPanels(ArrayList<JPanel> panels) {
+		this.panels = panels;
+	}
+
+
+	public static JButton getSearch() {
+		return search;
+	}
+
+
+	public void setSearch(JButton search) {
+		this.search = search;
+	}
+
+
+	public SearchFrame(final ClientCommunicator cc, final ValidateUserParam userParam){
+
+//	Input panel
+//		ChangeListener changeListener = new ChangeListener(){
+
+//			@Override
+//			public void stateChanged(ChangeEvent e) {
+//					JTabbedPane sourceTabbedPane = (JTabbedPane) e.getSource();
+//					int index = sourceTabbedPane.getSelectedIndex();
+//					listModel.removeAllElements();
+//					GetFieldsParam getFieldsParam = new GetFieldsParam();
+//					GetFieldsResult getFieldsResult = new GetFieldsResult();
+//					getFieldsParam.setUser(userParam.getUser());
+//					getFieldsParam.setPassword(userParam.getPassword());
+//					getFieldsParam.setProjectID(index);
+//					try {
+//						getFieldsResult  = cc.getFields(getFieldsParam);
+//					} catch (ClientException e1) {
+//						e1.printStackTrace();
+//					}
+//					for(Field field: getFieldsResult.getFields()){
+//						System.out.println(field.getTitle());
+//						listModel.addElement(field.getTitle());
+//					}
+//			}
+//			
+//		};
+		
+		GetProjectsParam getProjectsParam = new GetProjectsParam();
+		GetProjectsResult getProjectsResult = new GetProjectsResult();
+		getProjectsParam.setUser(userParam.getUser());
+		getProjectsParam.setPassword(userParam.getPassword());
+	
+		try {
+			getProjectsResult = cc.getProjects(getProjectsParam);
+		} catch (ClientException e2) {
+			e2.printStackTrace();
+		}
+		
+		//JTabbedPane projects = new JTabbedPane();
+		for(GetProjectsResult gpr: getProjectsResult.getResults()){
+//			JComponent panelTab = new JLabel(Integer.toString(gpr.getProjectID()));
+			JPanel panel = new JPanel();
+			panel.setPreferredSize(new Dimension(30,200));
+			panel.setLayout(new BorderLayout());
+			
+			JLabel projectLabel = new JLabel("Project: "+Integer.toString(gpr.getProjectID()));
+			panel.add(projectLabel, BorderLayout.NORTH);
+			
+			DefaultListModel listModel = new DefaultListModel();
+			GetFieldsParam getFieldsParam = new GetFieldsParam();
+			GetFieldsResult getFieldsResult = new GetFieldsResult();
+			getFieldsParam.setUser(userParam.getUser());
+			getFieldsParam.setPassword(userParam.getPassword());
+			getFieldsParam.setProjectID(gpr.getProjectID());
+			try {
+				getFieldsResult  = cc.getFields(getFieldsParam);
+			} catch (ClientException e1) {
+				e1.printStackTrace();
+			}
+			
+			for(Field field: getFieldsResult.getFields()){
+				System.out.println(field.getTitle());
+				ArrayList<String> listItem = new ArrayList<String>();
+				listItem.add(Integer.toString(field.getPrimaryID()));
+				listItem.add(field.getTitle());
+				listModel.addElement(listItem);
+			}
+			
+			JList fields = new JList(listModel);
+			JScrollPane scrollPane = new JScrollPane();
+			fields.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+			fields.setPreferredSize(new Dimension(100,200));
+			fields.setLayoutOrientation(JList.VERTICAL);
+			scrollPane.setViewportView(fields);
+
+			panel.add(fields,BorderLayout.CENTER);
+			panels.add(panel);
+			
+		//	projects.addTab(Integer.toString(gpr.getProjectID()), fields );
+			System.out.println("added tab"+ gpr.getProjectID());
+		}
+		
+
+		
+		//projects.addChangeListener(changeListener);
+
+		JPanel inputPanel = new JPanel();
+//		JLabel fieldsLabel = new JLabel("Fields: ");
+//		fieldsLabel.setPreferredSize(new Dimension(100,20));
+
+
+
+		inputPanel.setLayout(new BoxLayout(inputPanel,BoxLayout.X_AXIS));
+		for(JPanel pnl:panels){
+			inputPanel.add(pnl);
+		}
+		
+		
+//		inputPanel.add(fieldsLabel);
+//		inputPanel.add(projects);
+//		Search/Values
+		JPanel middlePanel = new JPanel();
+		middlePanel.setPreferredSize(new Dimension(100,20));
+		middlePanel.setLayout(new BorderLayout());
+
+		JLabel valuesLabel = new JLabel("Values: ");
+		valuesLabel.setPreferredSize(new Dimension(100,20));
+		valuesInput.setPreferredSize(new Dimension(100,200));
+		middlePanel.add(valuesLabel, BorderLayout.NORTH);
+		middlePanel.add(valuesInput, BorderLayout.CENTER);
+		middlePanel.add(search, BorderLayout.SOUTH);
+// resultPanel 
+//
+		results.setPreferredSize(new Dimension(700,120));
+//		resultPanel.add(results);
+		images.setPreferredSize(new Dimension(700,120));
+		
+		searchFrame.getContentPane().add(inputPanel,BorderLayout.NORTH);
+		searchFrame.getContentPane().add(middlePanel,BorderLayout.CENTER);
+		searchFrame.getContentPane().add(images,BorderLayout.SOUTH);
+		searchFrame.pack();
+		searchFrame.setMinimumSize(new Dimension(700,500));
+		searchFrame.setVisible(true);
+		
+		
+	}
+
+
+	public JList getImages() {
+		return images;
+	}
+
+
+	public void setImages(JList images) {
+		this.images = images;
+		searchFrame.getContentPane().add(this.images,BorderLayout.SOUTH);
+		searchFrame.getContentPane().revalidate();
+	}
+}

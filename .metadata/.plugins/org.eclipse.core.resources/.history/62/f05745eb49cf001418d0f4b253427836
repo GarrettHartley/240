@@ -1,0 +1,76 @@
+package searchGui;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTabbedPane;
+
+import client.ClientCommunicator;
+import client.ClientException;
+import shared.communicationClasses.GetProjectsParam;
+import shared.communicationClasses.GetProjectsResult;
+import shared.communicationClasses.ValidateUserParam;
+import shared.communicationClasses.ValidateUserResult;
+
+public class SearchGuiMain  extends JFrame {
+	static LoginFrame loginFrame = new LoginFrame();
+	static SearchFrame searchFrame = null;
+
+
+
+	public static void main(String[] args) {
+
+		loginFrame.getLogin().addActionListener(al);
+
+	}
+
+	private static ActionListener al = new ActionListener(){
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			Object o = e.getSource();
+			JButton button = null;
+			if(o instanceof JButton){
+				button = (JButton)o;
+			}
+
+			if(button.getText().equals("Login")){
+				System.out.println("!!!!!!!!!This is the action event: "+ button.getText());
+				ValidateUserParam validateUserParam = new ValidateUserParam();
+				ValidateUserResult validateUserResult = new ValidateUserResult();
+				ClientCommunicator cc = new ClientCommunicator(LoginFrame.getHostTextField().getText(),LoginFrame.getPortTextField().getText());
+				validateUserParam.setPassword(LoginFrame.getPasswordTextField().getText());
+				validateUserParam.setUser(LoginFrame.getNameTextField().getText());
+				System.out.println("password: "+validateUserParam.getPassword());
+				System.out.println("username: "+validateUserParam.getUser());
+				System.out.println("port: "+LoginFrame.getPortTextField().getText());
+				System.out.println("host: "+LoginFrame.getHostTextField().getText());
+
+				try {
+					validateUserResult = cc.validateUser(validateUserParam);
+				} catch (ClientException e1) {
+					e1.printStackTrace();
+				}		
+
+				if( validateUserResult.getValid() == true){
+					loginFrame.getLoginFrame().dispose();
+					searchFrame = new SearchFrame(cc, validateUserParam);
+					SearchFrame.getSearch().addActionListener(al);;
+					System.out.println("This is a user");	
+				}
+				else{
+					System.out.println("This is not a user");
+				}
+			}
+			else if(button.getText().equals("Search")){
+				
+				
+			}
+		}
+	};
+
+}

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="/users/home1/guest/h/hartley9/Downloads" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="filter_imports;" key="filters_last_used"/>
+	<item value="/users/home1/guest/h/hartley9/240_projects/project1" key="org.eclipse.jdt.ui.last.external.project"/>
+	<section name="SelfEncapsulateFieldWizard">
+		<item value="false" key="GenerateJavadoc"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
+		<item value="1" key="layout"/>
+		<item value="true" key="group_libraries"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;packageExplorer group_libraries=&quot;1&quot; layout=&quot;1&quot; linkWithEditor=&quot;0&quot; rootMode=&quot;1&quot; workingSetName=&quot;Aggregate for window 1420754217636&quot;&gt;&#x0A;&lt;customFilters userDefinedPatternsEnabled=&quot;false&quot;&gt;&#x0A;&lt;xmlDefinedFilters&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.StaticsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.mylyn.java.ui.MembersFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.m2e.MavenModuleFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.FieldsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;/xmlDefinedFilters&gt;&#x0A;&lt;lastRecentlyUsedFilters&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter&quot;/&gt;&#x0A;&lt;/lastRecentlyUsedFilters&gt;&#x0A;&lt;/customFilters&gt;&#x0A;&lt;/packageExplorer&gt;" key="memento"/>
+		<item value="false" key="linkWithEditor"/>
+		<item value="1" key="rootMode"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.typehierarchy.QuickHierarchy">
+		<item value="true" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_SIZE"/>
+		<item value="365" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_HEIGHT"/>
+		<item value="402" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_WIDTH"/>
+		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
+		<item value="true" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE"/>
+		<item value="402" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH"/>
+		<item value="345" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_HEIGHT"/>
+		<item value="false" key="GoIntoTopLevelTypeAction.isChecked"/>
+		<item value="false" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
+	<section name="javadoc">
+		<item value="private" key="access"/>
+		<item value="false" key="noindex"/>
+		<item value="/users/home1/guest/h/hartley9/240_projects/project1/javadoc.xml" key="antpath"/>
+		<item value="false" key="nodeprecatedlist"/>
+		<item value="true" key="use"/>
+		<item value="false" key="nodeprecated"/>
+		<item value="true" key="author"/>
+		<item value="false" key="nonavbar"/>
+		<item value="" key="docletpath"/>
+		<item value="/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.71-2.5.3.3.fc20.x86_64/bin/javadoc" key="javadoc_command_history"/>
+		<item value="1.7" key="source"/>
+		<item value="true" key="version"/>
+		<item value="" key="docletname"/>
+		<item value="true" key="splitindex"/>
+		<item value="true" key="fromStandard"/>
+		<item value="false" key="notree"/>
+		<item value="/users/home1/guest/h/hartley9/public_html/javadoc" key="destdir"/>
+		<item value="false" key="openinbrowser"/>
+		<section name="projects">
+			<section name="hangmanPractice">
+				<item value="/users/home1/guest/h/hartley9/240_projects/hangmanPractice/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/hangmanPractice/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="project1">
+				<item value="/users/home1/guest/h/hartley9/240_projects/project1/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/public_html/javadoc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="spell">
+				<item value="/users/home1/guest/h/hartley9/240_projects/spell/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/spell/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="hangmanPractice2">
+				<item value="/users/home1/guest/h/hartley9/240_projects/hangmanPractice2/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/hangmanPractice2/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="hangman">
+				<item value="/users/home1/guest/h/hartley9/240_projects/hangman/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/hangman/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="3_practice">
+				<item value="/users/home1/guest/h/hartley9/240_projects/3_practice/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/3_practice/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="RemoteSystemsTempFiles">
+				<item value="/users/home1/guest/h/hartley9/240_projects/RemoteSystemsTempFiles/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/RemoteSystemsTempFiles/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="2_240">
+				<item value="/users/home1/guest/h/hartley9/240_projects/2_240/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/2_240/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="3">
+				<item value="/users/home1/guest/h/hartley9/240_projects/3/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/3/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="4">
+				<item value="/users/home1/guest/h/hartley9/240_projects/4/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/4/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="spellchecker">
+				<item value="/users/home1/guest/h/hartley9/240_projects/spellchecker/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/spellchecker/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="2_practice">
+				<item value="/users/home1/guest/h/hartley9/240_projects/2_practice/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/2_practice/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="spellPractice">
+				<item value="/users/home1/guest/h/hartley9/240_projects/spellPractice/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/spellPractice/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="1_240">
+				<item value="/users/home1/guest/h/hartley9/240_projects/1_240/javadoc.xml" key="antpath"/>
+				<item value="/users/home1/guest/h/hartley9/240_projects/1_240/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+		</section>
+	</section>
+	<section name="BreadcrumbItemDropDown">
+	</section>
+	<section name="OverrideMethodDialog">
+		<item value="true" key="showtypes"/>
+	</section>
+	<section name="RenameInformationPopup">
+	</section>
+	<section name="JavadocWizardDialog">
+		<item value="702" key="DIALOG_WIDTH"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="632" key="DIALOG_HEIGHT"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+		<item value="349" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="AddGetterSetterDialog">
+		<item value="false" key="RemoveFinal"/>
+		<item value="false" key="SortOrdering"/>
+	</section>
+	<section name="JavaElementSearchActions">
+	</section>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item value="false" key="renameSubpackages"/>
+		<item value="false" key="updateQualifiedNames"/>
+		<item value="*" key="patterns"/>
+		<item value="true" key="updateSimilarElements"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
+		<item value="true" key="updateTextualMatches"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.FilteredTypesSelectionDialog">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History/&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="-19" key="DIALOG_Y_ORIGIN"/>
+			<item value="7" key="DIALOG_X_ORIGIN"/>
+		</section>
+	</section>
+	<section name="NewClassWizardPage">
+		<item value="false" key="create_constructor"/>
+		<item value="true" key="create_unimplemented"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+	</section>
+	<section name="DialogBounds_GenerateHashCodeEqualsDialog">
+		<item value="578" key="DIALOG_WIDTH"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="577" key="DIALOG_HEIGHT"/>
+		<item value="75" key="DIALOG_Y_ORIGIN"/>
+		<item value="547" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="DialogBounds_OverrideMethodDialog">
+		<item value="625" key="DIALOG_WIDTH"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="462" key="DIALOG_HEIGHT"/>
+		<item value="182" key="DIALOG_Y_ORIGIN"/>
+		<item value="514" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
+		<item value="631" key="DIALOG_WIDTH"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="704" key="DIALOG_HEIGHT"/>
+		<item value="14" key="DIALOG_Y_ORIGIN"/>
+		<item value="619" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History/&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="100" key="DIALOG_Y_ORIGIN"/>
+			<item value="443" key="DIALOG_X_ORIGIN"/>
+		</section>
+	</section>
+	<section name="DialogBounds_GenerateToStringDialog">
+		<item value="576" key="DIALOG_WIDTH"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="695" key="DIALOG_HEIGHT"/>
+		<item value="125" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="RefactoringWizard.preview">
+		<item value="580" key="width"/>
+		<item value="380" key="height"/>
+	</section>
+	<section name="SourceActionDialog.methods">
+		<item value="true" key="IgnoreDefault"/>
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="Blocks"/>
+		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="InstanceOf"/>
+		<item value="0" key="StringStyle"/>
+		<item value="0" key="ToStringTemplateSelected"/>
+		<item value="false" key="LimitElements"/>
+		<item value="false" key="SkipNull"/>
+		<item value="10" key="LimitValue"/>
+		<item value="false" key="FinalModifier"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item value="1" key="index"/>
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="2" key="pageIndex"/>
+	</section>
+	<section name="JavaSearchPage">
+		<item value="12" key="HISTORY_SIZE"/>
+		<item value="false" key="CASE_SENSITIVE"/>
+		<item value="15" key="INCLUDE_MASK"/>
+		<section name="HISTORY6">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="15" key="includeMask"/>
+			<item value="0" key="scope"/>
+			<item value="!!!!!!!!!!!!!!!!" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY7">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="15" key="includeMask"/>
+			<item value="0" key="scope"/>
+			<item value="selectedField1" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY10">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="11" key="includeMask"/>
+			<item value="3" key="scope"/>
+			<item value="column: " key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY4">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="15" key="includeMask"/>
+			<item value="0" key="scope"/>
+			<item value="Field Entry" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY5">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="15" key="includeMask"/>
+			<item value="0" key="scope"/>
+			<item value="focus" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY11">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="11" key="includeMask"/>
+			<item value="3" key="scope"/>
+			<item value="System.out.println(?column" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY8">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="15" key="includeMask"/>
+			<item value="0" key="scope"/>
+			<item value="FieldAndValues(batchState" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY9">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="11" key="includeMask"/>
+			<item value="3" key="scope"/>
+			<item value="System.out" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY2">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="15" key="includeMask"/>
+			<item value="0" key="scope"/>
+			<item value="Record" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY3">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="15" key="includeMask"/>
+			<item value="0" key="scope"/>
+			<item value="Tab" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY0">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="15" key="includeMask"/>
+			<item value="0" key="scope"/>
+			<item value="JList" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY1">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="15" key="includeMask"/>
+			<item value="0" key="scope"/>
+			<item value="this is the selected" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="NewPackageWizardPage">
+		<item value="false" key="create_package_info_java"/>
+	</section>
+</section>

@@ -1,0 +1,12 @@
+13:38:50 **** Incremental Build of configuration Debug for project test ****
+make all 
+Building target: test
+Invoking: GCC C++ Linker
+g++  -o "test"  ./src/test.o   
+/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [test] Error 1
+
+13:38:50 Build Finished (took 234ms)
+

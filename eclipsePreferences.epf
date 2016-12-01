@@ -1,0 +1,22 @@
+#Thu Mar 26 14:17:07 MDT 2015
+/instance/org.eclipse.cdt.ui/content_assist_disabled_computers=org.eclipse.cdt.ui.parserProposalCategory\u0000org.eclipse.cdt.ui.textProposalCategory\u0000
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.formatterprofiles.version=12
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+/instance/org.eclipse.ui.editors/indexResultIndication=false
+\!/=
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.7
+/instance/org.eclipse.jdt.launching/org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1426887141325" defaultVMConnector\="">\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\n<vm id\="1426887141325" name\="java-1.7.0-openjdk-1.7.0.71-2.5.3.3.fc20.x86_64" path\="/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.71-2.5.3.3.fc20.x86_64"/>\n</vmType>\n</vmSettings>\n
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+@org.eclipse.jdt.ui=3.9.2.v20140324-2308
+/instance/org.eclipse.cdt.ui/spelling_locale_initialized=true
+/instance/org.eclipse.ui.editors/indexResultIndicationInOverviewRuler=false
+@org.eclipse.cdt.ui=5.7.0.201403101643
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance=1.7
+/instance/org.eclipse.ui.editors/indexResultIndicationInVerticalRuler=false
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source=1.7
+file_export_version=3.0
+@org.eclipse.jdt.launching=3.7.1.v20140324-2308
+@org.eclipse.jdt.core=3.9.2.v20140324-2308
+@org.eclipse.ui.editors=3.8.100.v20140324-2308

@@ -1,0 +1,58 @@
+package server.database;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import server.database.BatchDAO;
+import server.database.Database;
+import shared.modelClasses.Batch;
+
+public class BatchDAOTest {
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		Database.initialize();
+	}
+
+	@Before
+	public void setUp() throws Exception {
+		db = new Database();
+		db.startTransaction();
+		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		db.endTransaction(false);
+		db = null;
+		batch = null;
+	}
+	
+	private Database db;
+	private BatchDAO batch;
+	
+
+	@Test
+	public void testGet_single_batch() {
+
+		batch = new BatchDAO(db);
+		Batch result = new Batch();
+		result = batch.Get_single_batch(1);
+		
+		Batch correctResult = new Batch();
+		
+		result.toString();
+		
+		assertEquals(1,1);
+		
+		
+		
+		
+		//fail("Not yet implemented");
+	}
+
+}

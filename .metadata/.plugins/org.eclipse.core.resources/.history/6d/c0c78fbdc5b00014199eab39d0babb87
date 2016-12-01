@@ -1,0 +1,49 @@
+package hangman;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class EvilHangmanGame implements IEvilHangmanGame {
+	Set<String> words;
+	String currW;
+	
+	public EvilHangmanGame(){
+		words = new TreeSet<String>();
+		currW  = new String();
+	}
+	
+	@Override
+	public void startGame(File dictionary, int wordLength) {
+		Scanner scanner = null;
+		try {
+			scanner = new Scanner(new File(dictionary.getAbsolutePath()));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		while(scanner.hasNext()){
+			String inputWord = new String();
+			words.add(inputWord);
+		}
+		
+		for(int i =0;i<wordLength;i++){
+			currW = currW+"_";
+		}
+		
+		
+	}
+
+	@Override
+	public Set<String> makeGuess(char guess) throws GuessAlreadyMadeException {
+		
+		
+		
+		
+		return null;
+	}
+
+}

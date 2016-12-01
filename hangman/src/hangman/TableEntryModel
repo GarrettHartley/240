@@ -1,0 +1,38 @@
+package client.indexerWindow.tableEntry;
+
+import javax.swing.table.AbstractTableModel;
+
+public class TableEntryModel extends AbstractTableModel{
+	
+	private Object[][] data;
+	int numberOfRecords;
+	int numberOfFields;
+	
+	
+	
+	public void setData(Object[][] data){
+		this.data = data;
+		fireTableDataChanged();
+	}
+	
+	
+	
+	@Override
+	public int getRowCount() {
+		return numberOfRecords;
+	}
+
+	@Override
+	public int getColumnCount() {
+		// TODO Auto-generated method stub
+		return numberOfFields;
+	}
+
+	@Override
+	public Object getValueAt(int rowIndex, int columnIndex) {
+		// TODO Auto-generated method stub
+		return data[rowIndex][columnIndex];
+	}
+
+}
+

@@ -1,0 +1,159 @@
+package server.database.DAOJunitTests;
+
+import static org.junit.Assert.*;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import server.database.Database;
+import server.database.DatabaseException;
+import server.database.DAO.ProjectDAO;
+import server.database.DAO.UserDAO;
+import shared.communicationClasses.GetProjectsParam;
+import shared.communicationClasses.GetProjectsResult;
+import shared.communicationClasses.ValidateUserParam;
+import shared.communicationClasses.ValidateUserResult;
+import shared.modelClasses.Project;
+import shared.modelClasses.User;
+
+public class ProjectDAOTest {
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		Database.initialize();
+	}
+
+	@Before
+	public void setUp() throws Exception {
+		PreparedStatement stmt = null;
+		db = new Database();
+		db.startTransaction();
+		
+		String deleteProjects = "drop table if exists projects;";
+		String createProjects = "CREATE TABLE projects ("+
+				"primaryID INTEGER PRIMARY KEY  AUTOINCREMENT NOT NULL UNIQUE ,"+ 
+				"title VARCHAR NOT NULL ,"+
+				"recordsperimage INTEGER NOT NULL  DEFAULT 1,"+
+				"firstycoord INTEGER NOT NULL  DEFAULT 0,"+
+				"recordheight INTEGER NOT NULL  DEFAULT 1,"+
+				"numberfields INTEGER NOT NULL  DEFAULT 0)";
+		
+		stmt = db.getConnection().prepareStatement(deleteProjects);
+		stmt.execute();
+		stmt = db.getConnection().prepareStatement(createProjects);
+		stmt.execute();
+		
+
+		String deleteUsers = "drop table if exists users;";
+		String createUsers = "CREATE TABLE users ("+
+				"primaryID INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE  DEFAULT 1,"+
+				"username VARCHAR NOT NULL  UNIQUE ,"+ 
+				"password VARCHAR NOT NULL ,"+ 
+				"firstname CHAR NOT NULL ,"+
+				"lastname CHAR NOT NULL ,"+
+				"numrecords INTEGER NOT NULL  DEFAULT 0,"+
+				"hasbatch BOOLEAN DEFAULT false,"+
+				"email VARCHAR NOT NULL  UNIQUE );";
+		
+		stmt = db.getConnection().prepareStatement(deleteUsers);
+		stmt.execute();
+		stmt = db.getConnection().prepareStatement(createUsers);
+		stmt.execute();
+		
+		
+		try {
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		db.endTransaction(true);
+		db = null;
+		projectDAO = null;
+		userDAO = null;
+	}
+	
+	private Database db;
+	private ProjectDAO projectDAO;
+	private UserDAO userDAO;
+
+//Test insert and get ProjectByID
+	@Test	
+	public void testInsert() {
+		projectDAO = new ProjectDAO(db);
+		Project project = new Project();
+		Project getProjectFromTable = new Project();
+		
+		project.setTitle("testing2");
+		project.setRecordsPerImage(8);
+		project.setFirstYCoord(199);
+		project.setRecordHeight(60);
+		project.setNumberOfFields(4);
+	
+		projectDAO.insert(project);
+		
+		getProjectFromTable = projectDAO.getProjectByID(1);
+		assertEquals(getProjectFromTable.getRecordsPerImage()==8,true);
+		assertEquals(getProjectFromTable.getFirstYCoord()==199,true);
+		assertEquals(getProjectFromTable.getRecordHeight()==60,true);
+		assertEquals(getProjectFromTable.getNumberOfFields()==4,true);
+
+	}
+
+	@Test
+	public void testGetProjects() {
+		projectDAO = new ProjectDAO(db);
+		Project project = new Project();
+		GetProjectsParam param = new GetProjectsParam();
+		GetProjectsResult result = new GetProjectsResult();
+		userDAO = new UserDAO(db);
+		User user = new User();
+	
+		ValidateUserParam validParam = new ValidateUserParam();
+		ValidateUserParam invalidParam = new ValidateUserParam();
+		ValidateUserResult validResult = new ValidateUserResult();
+		ValidateUserResult invalidResult = new ValidateUserResult();
+
+		user.setUsername("Madlib");
+		user.setPassword("aveyTare");
+		user.setFirstname("jDilla");
+		user.setLastname("peteRock");
+		user.setNumRecords(2);
+		user.setEmail("clouddead");
+		userDAO.insert(user);
+		
+		param.setPassword("aveyTare");
+		param.setUser("Madlib");
+		
+		project.setTitle("testing1");
+		project.setRecordsPerImage(10);
+		project.setFirstYCoord(741);
+		project.setRecordHeight(40);
+		project.setNumberOfFields(6);
+	
+		projectDAO.insert(project);
+		
+		
+		try {
+			result = projectDAO.getProjects(param);
+		} catch (DatabaseException e) {
+			e.printStackTrace();
+		}
+		System.out.println("1\ntesting1");
+		System.out.println(result.toString());
+//		assertEquals("1\ntesting1".equals(result.toString()),true);
+		assertEquals(0!=result.getResults().size(), true);
+
+
+	}
+
+}

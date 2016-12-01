@@ -1,0 +1,168 @@
+package searchGui;
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import shared.communicationClasses.SearchParam;
+import shared.communicationClasses.SearchResult;
+import shared.communicationClasses.ValidateUserParam;
+import shared.communicationClasses.ValidateUserResult;
+import client.ClientCommunicator;
+import client.ClientException;
+
+class SharedListSelectionHandler implements ListSelectionListener {
+   
+	public void valueChanged(ListSelectionEvent e) {
+       if(!e.getValueIsAdjusting()){
+		System.out.println("This was the item selected"+e.getSource());
+		SearchGuiMain sgm = new SearchGuiMain();
+
+		System.out.println(sgm.getSearchFrame());
+
+      
+       
+       }
+    }
+
+}
+
+
+public class SearchGuiMain  extends JFrame {
+	static LoginFrame loginFrame = new LoginFrame();
+	static SearchFrame searchFrame = null;
+	
+	public static SearchFrame getSearchFrame() {
+		return searchFrame;
+	}
+
+
+
+	public static void setSearchFrame(SearchFrame searchFrame) {
+		SearchGuiMain.searchFrame = searchFrame;
+	}
+
+
+
+	static String host = new String();
+	static String port = new String();
+	static String username = new String();
+	static String password = new String();
+
+
+	public static void main(String[] args) {
+		loginFrame.getLogin().addActionListener(al);
+	}
+	
+
+
+	private static ActionListener al = new ActionListener(){
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			Object o = e.getSource();
+			JButton button = null;
+			if(o instanceof JButton){
+				button = (JButton)o;
+			}
+
+			if(button.getText().equals("Login")){
+				ValidateUserParam validateUserParam = new ValidateUserParam();
+				ValidateUserResult validateUserResult = new ValidateUserResult();
+				host = LoginFrame.getHostTextField().getText();
+				port = LoginFrame.getPortTextField().getText();
+				ClientCommunicator cc = new ClientCommunicator(host,port);
+				username =LoginFrame.getNameTextField().getText();
+				password = LoginFrame.getPasswordTextField().getText();
+				validateUserParam.setPassword(password);
+				validateUserParam.setUser(username);
+
+				try {
+					validateUserResult = cc.validateUser(validateUserParam);
+				} catch (ClientException e1) {
+					e1.printStackTrace();
+				}		
+
+				if( validateUserResult.getValid() == true){
+					loginFrame.getLoginFrame().dispose();
+					searchFrame = new SearchFrame(cc, validateUserParam);
+					SearchFrame.getSearch().addActionListener(al);;
+					System.out.println("This is a user");	
+				}
+				else{
+					System.out.println("This is not a user");
+				}
+			}
+			else if(button.getText().equals("Search")){
+				System.out.println("triggered search");
+				SearchParam searchParam =  new SearchParam();
+				ArrayList<Integer> searchInts = new ArrayList<Integer>();
+				String fields = new String();
+				fields ="";
+				
+				for(JPanel panel: searchFrame.getPanels()){
+					for( Component c :panel.getComponents()){
+						if(c instanceof JList){
+							if(((JList) c).isSelectionEmpty()==false){
+								for(ArrayList<String> string :(ArrayList<ArrayList<String>>)((JList) c).getSelectedValuesList()){
+									fields += string.get(0)+",";
+								}
+							}
+						}
+					}
+				}
+				
+				fields = fields.substring(0, fields.length()-1);
+				System.out.println(searchFrame.getValuesInput().getText());
+				System.out.println("search these fields: "+fields);
+				System.out.println("search values: "+searchFrame.getValuesInput().getText());
+				searchParam.setFieldsToSearch(fields);
+				searchParam.setSearchValues(searchFrame.getValuesInput().getText().toUpperCase());
+				searchParam.setPassword(password);
+				searchParam.setUser(username);
+				ClientCommunicator cc = new ClientCommunicator(host,port);
+				SearchResult searchResult = new SearchResult();
+				try {
+					searchResult = cc.search(searchParam);
+				} catch (ClientException e1) {
+					e1.printStackTrace();
+				}
+				
+			//	searchFrame.getResults().setText(searchResult.getResults());
+				DefaultListModel listModel = new DefaultListModel();
+				for(SearchResult sResult: searchResult.getResults()){
+					System.out.println(sResult.getUrlPrefix()+sResult.getImgURL());
+					String listItem = new String(sResult.getUrlPrefix()+sResult.getImgURL());
+					listModel.addElement(listItem);
+				}
+				
+				JList images = new JList(listModel);
+				images.addListSelectionListener(new SharedListSelectionHandler());
+				JScrollPane scrollPane = new JScrollPane();
+				images.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+				images.setPreferredSize(new Dimension(700,120));
+				images.setLayoutOrientation(JList.VERTICAL);
+				
+				scrollPane.setViewportView(images);
+				
+				searchFrame.getSearchFrame().getContentPane().add(images,BorderLayout.SOUTH);
+				searchFrame.getSearchFrame().getContentPane().revalidate();
+				
+			}
+		}
+	};
+
+}

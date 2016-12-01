@@ -1,0 +1,29 @@
+package hangman;
+
+import hangman.IEvilHangmanGame.GuessAlreadyMadeException;
+
+import java.io.File;
+
+public class main {
+
+	public static void main(String[] args) {
+		
+		File dictionary = new File(args[0]);
+		int wordLength = Integer.parseInt(args[1]);
+		
+		EvilHangmanGame game = new EvilHangmanGame();
+		char guess = 'a';
+		game.startGame(dictionary,wordLength);
+		try {
+			game.makeGuess(guess);
+		} catch (GuessAlreadyMadeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+
+	}
+
+}

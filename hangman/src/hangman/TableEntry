@@ -1,0 +1,144 @@
+package client.indexerWindow.tableEntry;
+
+import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.AbstractCellEditor;
+import javax.swing.BorderFactory;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.border.Border;
+import javax.swing.table.TableCellEditor;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
+
+import client.gui.BatchState;
+
+public class TableEntry extends JPanel {
+
+	BatchState batchState;
+	TableEntryModel tableModel = new TableEntryModel();
+	JTable table;
+	
+
+
+	public TableEntry() {
+		String[][]  data = new String[][] {
+		        new String[] { "1", "2", "3" ,"5"},
+		        new String[] { "1", "2", "3", "4"},
+		    };
+		
+
+		tableModel.setData(data);
+		table = new JTable(tableModel);
+		table.setRowHeight(5);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table.setCellSelectionEnabled(true);
+		table.getTableHeader().setReorderingAllowed(false);
+		System.out.println("creating table");
+		TableColumnModel columnModel = table.getColumnModel();		
+		
+		for (int i = 0; i < tableModel.getColumnCount(); ++i) {
+			System.out.println("what the heck is going on?");
+			TableColumn column = columnModel.getColumn(i);
+			column.setPreferredWidth(150);
+		}		
+		for (int i = 1; i < tableModel.getColumnCount(); ++i) {
+			TableColumn column = columnModel.getColumn(i);
+			column.setCellRenderer(new tableEntryCellRenderer());
+			column.setCellEditor(new tableEntryCellEditor());
+		}
+		
+		JLabel label2 = new JLabel("Text-Only Label");
+		this.add(label2);
+		this.add(table);
+		
+		
+	}
+	
+	public TableEntry(BatchState batchState, String[][] data){
+
+		System.out.println("got into the setData");
+
+	}
+	
+	public void setData(String[][] data){
+
+		System.out.println("got into the setData");
+	}
+
+	public BatchState getBatchState() {
+		return batchState;
+	}
+
+	public void setBatchState(BatchState batchState) {
+		this.batchState = batchState;
+	}
+	
+	@SuppressWarnings("serial")
+	class tableEntryCellRenderer extends JLabel implements TableCellRenderer {
+
+		private Border unselectedBorder = BorderFactory.createLineBorder(Color.BLACK, 1);
+		private Border selectedBorder = BorderFactory.createLineBorder(Color.BLACK, 2);
+
+		public tableEntryCellRenderer() {
+			
+			setOpaque(true);
+			setFont(getFont().deriveFont(16.0f));
+		}
+
+		public Component getTableCellRendererComponent(JTable table,
+				Object value, boolean isSelected, boolean hasFocus, int row,
+				int column) {
+
+			Color c = new Color(200,10,10);
+			this.setBackground(c);
+			
+			if (isSelected) {
+				this.setBorder(selectedBorder);
+			}
+			else {
+				this.setBorder(unselectedBorder);
+			}
+			
+			this.setText((String)value);
+			
+			return this;
+		}
+
+	}
+	
+	@SuppressWarnings("serial")
+	class tableEntryCellEditor extends AbstractCellEditor implements TableCellEditor {
+		
+		private JComboBox<String> comboBox;
+		private String currentValue;
+		
+		
+		public tableEntryCellEditor() {
+			System.out.println("Inside Cell Editor");
+		}
+		@Override
+		public Object getCellEditorValue() {
+			return currentValue;
+		}
+
+		@Override
+		public Component getTableCellEditorComponent(JTable table, Object value,
+				boolean isSelected, int row, int column) {
+			
+			currentValue = (String)value;
+			
+			comboBox.setSelectedItem(currentValue);
+			
+			return comboBox;
+		}
+		
+	}
+	
+}
+

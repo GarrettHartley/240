@@ -1,0 +1,66 @@
+12:24:02 **** Incremental Build of configuration Debug for project test ****
+make all 
+make: Nothing to be done for `all'.
+15:49:39 **** Clean-only build of configuration Debug for project test ****
+make clean 
+rm -rf  ./src/test.o  ./src/test.d  test
+ 
+09:25:31 **** Build of configuration Debug for project test ****
+make all 
+Building file: ../src/test.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test.d" -MT"src/test.d" -o "src/test.o" "../src/test.cpp"
+Finished building: ../src/test.cpp
+ 
+Building target: test
+Invoking: GCC C++ Linker
+g++  -o "test"  ./src/test.o   
+/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [test] Error 1
+10:24:33 **** Build of configuration Debug for project test ****
+make all 
+Building target: test
+Invoking: GCC C++ Linker
+g++  -o "test"  ./src/test.o   
+/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [test] Error 1
+15:38:16 **** Incremental Build of configuration Debug for project test ****
+make all 
+Building target: test
+Invoking: GCC C++ Linker
+g++  -o "test"  ./src/test.o   
+/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [test] Error 1
+14:04:10 **** Incremental Build of configuration Debug for project test ****
+make all 
+Building target: test
+Invoking: GCC C++ Linker
+g++  -o "test"  ./src/test.o   
+/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [test] Error 1
+22:21:29 **** Build of configuration Debug for project test ****
+make all 
+Building target: test
+Invoking: GCC C++ Linker
+g++  -o "test"  ./src/test.o   
+/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [test] Error 1
+13:38:50 **** Incremental Build of configuration Debug for project test ****
+make all 
+Building target: test
+Invoking: GCC C++ Linker
+g++  -o "test"  ./src/test.o   
+/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [test] Error 1

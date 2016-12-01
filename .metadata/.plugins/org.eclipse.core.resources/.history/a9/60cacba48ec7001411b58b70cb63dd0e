@@ -1,0 +1,114 @@
+package server.database.DAO;
+
+import static org.junit.Assert.*;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import server.database.Database;
+import server.database.DatabaseException;
+import server.database.DAO.FieldDAO;
+import shared.modelClasses.Field;
+
+public class FieldDAOTest {
+
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		Database.initialize();
+	}
+
+	
+// Initializes the Fields database. 
+	@Before
+	public void setUp() throws Exception {
+		PreparedStatement stmt = null;
+		db = new Database();
+		db.startTransaction();
+		
+		String deleteFields = "drop table if exists fields;";
+		String createFields = "CREATE TABLE fields ("+
+				"primaryID INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,"+
+				"foreignProjectKey INTEGER NOT NULL ,"+
+				"title VARCHAR NOT NULL ,"+ 
+				"xcoord INTEGER NOT NULL  DEFAULT 0,"+ 
+				"width INTEGER NOT NULL  DEFAULT 1,"+ 
+				"helphtml VARCHAR NOT NULL ,"+
+				"knowndata VARCHAR,"+
+				"fieldNumber INTEGER NOT NULL);";
+				
+		stmt = db.getConnection().prepareStatement(deleteFields);
+		stmt.execute();
+		stmt = db.getConnection().prepareStatement(createFields);
+		stmt.execute();
+		
+		try {
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		db.endTransaction(true);
+		db = null;
+		fieldDAO = null;
+	}
+	
+	private Database db;
+	private FieldDAO fieldDAO;
+	
+	@Test
+	public void testInsert() {
+		fieldDAO = new FieldDAO(db);
+		Field validField = new Field();
+		Field invalidField = new Field();
+		
+		validField.setTitle("title");
+		validField.setXcoord(741);
+		validField.setWidth(200);
+		validField.setHelpHTML("helpHTML");
+		validField.setKnownData("something");
+		validField.setForeignProjectKey(1);
+		validField.setFieldNumber(2);
+		
+		invalidField.setHelpHTML(null);
+		invalidField.setForeignProjectKey(1);
+		
+		ArrayList<Field> results = new ArrayList<Field>();
+		
+// Inserts a valid input in to fields table
+		fieldDAO.insert(validField);
+		
+// Attempts to insert invalid input into fields table
+		fieldDAO.insert(invalidField);
+
+// Gets fields and checks if they were returned;
+		try {
+			results = fieldDAO.getFields(1);
+		} catch (DatabaseException e) {
+			e.printStackTrace();
+		}
+//Verifies that the field was added to the database		
+		assertEquals(results.get(0).getTitle().equals("title"),true);
+// Verifies there is only one item in the database		
+		assertEquals(results.size()==1,true);
+		
+	}
+
+
+	@Test
+	public void testGetFields() {
+		fail("Not yet implemented");
+	}
+
+}

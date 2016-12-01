@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="-25" key="DIALOG_Y_ORIGIN"/>
+		<item value="690" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="656" key="dialogHeight"/>
+		<item value="1050" key="dialogWidth"/>
+		<list key="textEntries">
+		</list>
+		<list key="orderedElements">
+		</list>
+		<list key="orderedProviders">
+		</list>
+		<list key="textArray">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.export.Preferences" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="PreferencesExportWizard">
+		<item value="/users/guest/h/hartley9/240_projects/eclipsePreferences.epf" key=""/>
+		<item value="false" key="WizardPreferencesExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID"/>
+		<item value="false" key="WizardPreferencesExportPage1.EXPORT_ALL_PREFERENCES_ID"/>
+		<list key="WizardPreferencesExportPage1.TRANSFER_PREFERENCES_NAMES_ID">
+			<item value="org.eclipse.cdt.ui.transfer.editor.appearance"/>
+			<item value="org.eclipse.cdt.ui.transfer.editor.behavior"/>
+			<item value="org.eclipse.jdt.debug.ui.transfer.jres"/>
+			<item value="org.eclipse.jdt.internal.ui.transfer.codestyle"/>
+			<item value="org.eclipse.jdt.internal.core.transfer.compiler"/>
+		</list>
+		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="/users/guest/h/hartley9/240_projects/eclipsePreferences.epf"/>
+		</list>
+	</section>
+</section>

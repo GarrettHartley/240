@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/hangmanPractice/src/hangman/main.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="hangman.main"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="/users/guest/h/hartley9/240_projects/hangmanPractice/src/hangman/dictionary.txt&#10;3&#10;26"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="hangmanPractice"/>
+</launchConfiguration>

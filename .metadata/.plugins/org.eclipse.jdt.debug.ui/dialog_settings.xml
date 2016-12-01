@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=3/src&amp;lt;listem{RunGrep.java[RunGrep&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=1_240/src&amp;lt;{ImageEditor.java[ImageEditor&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=hangmanPractice/src&amp;lt;hangman{main.java[main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=hangman/src&amp;lt;hangman{main.java[main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=spellchecker/src&amp;lt;spell{main.java[main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=2_practice/src&amp;lt;spell{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=2_240/src&amp;lt;spell{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=4/src&amp;lt;hangman{main.java[main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=project1/src&amp;lt;shared.modelClasses{databaseTest.java[databaseTest&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=project1/src&amp;lt;client{clientTest.java[clientTest&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=project1/src&amp;lt;searchGui{SearchGui.java[SearchGui&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=project1/src&amp;lt;searchGui{SearchGuiMain.java[SearchGuiMain&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=project1/src&amp;lt;gui{Gui.java[Gui&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=project1/test&amp;lt;servertester{GuiTester.java[GuiTester&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=project1/src&amp;lt;spellChecker{main.java[main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=project1/src&amp;lt;dataImporter{DataImporter.java[DataImporter&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=project1/src&amp;lt;client.gui{Gui.java[Gui&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=project1/src&amp;lt;server{Server.java[Server&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="475" key="DIALOG_WIDTH"/>
+			<item value="1|Oxygen-Sans Sans-Book|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="597" key="DIALOG_HEIGHT"/>
+			<item value="0" key="DIALOG_Y_ORIGIN"/>
+			<item value="100" key="DIALOG_X_ORIGIN"/>
+		</section>
+	</section>
+	<section name="org.eclipse.jdt.internal.debug.ui.ExpressionInformationControlCreator$ExpressionInformationControl">
+		<item value="200" key="SashWeightTree"/>
+		<item value="200" key="SashWeightDetails"/>
+		<item value="698" key="WIDTH"/>
+		<item value="180" key="HEIGHT"/>
+	</section>
+</section>

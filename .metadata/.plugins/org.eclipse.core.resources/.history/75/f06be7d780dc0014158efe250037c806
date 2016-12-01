@@ -1,0 +1,143 @@
+package client.indexerWindow.formEntry;
+
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.util.ArrayList;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.ListSelectionModel;
+
+import client.gui.BatchState;
+import client.gui.BatchStateListener;
+import client.indexerWindow.tableEntry.TableEntryCell;
+
+@SuppressWarnings("serial")
+public class FormEntry extends JPanel implements BatchStateListener {
+	BatchState batchState;
+	FieldAndValues fieldAndValues;
+	ArrayList<FieldAndValues> recordValues = new ArrayList<FieldAndValues>();
+	JPanel recordCards = new JPanel(new CardLayout());
+	ArrayList<ArrayList<TableEntryCell>> data= new ArrayList<ArrayList<TableEntryCell>>();
+	JList records;
+
+	public FormEntry(BatchState batchState) {
+		this.batchState = batchState;
+		batchState.addUpdateDataListener(this);
+		batchState.addUpdateSelectedListener(this);
+		records = new JList();
+		records.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		this.setLayout(new BorderLayout());
+		this.add(records, BorderLayout.WEST);
+	}
+
+
+	public FormEntry newFormEntry(){
+		DefaultListModel listModel = new DefaultListModel();
+		this.remove(records);
+
+		records = new JList();
+		records.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		records.addListSelectionListener(listSelectionListener);
+		
+		for(int i = 0; i<batchState.getNumberOfRecords(); i++){
+			listModel.addElement(i+1);
+			FieldAndValues record = new FieldAndValues(batchState, i);
+			record.setRecordNumber(i);
+			recordValues.add(record);
+			record.setName(Integer.toString(i));
+			recordCards.add(record,Integer.toString(i));
+		}
+		
+		records = new JList(listModel);
+		records.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		records.addListSelectionListener(listSelectionListener);
+		JScrollPane recordsScroll = new JScrollPane(records);
+		this.add(recordsScroll,BorderLayout.WEST);
+		this.add(recordCards,BorderLayout.CENTER);
+		this.revalidate();
+		return this;
+
+	}
+
+	@Override
+	public void downloadBatch() {
+		DefaultListModel listModel = new DefaultListModel();
+		this.remove(records);
+		records = new JList();
+		records.addListSelectionListener(listSelectionListener);
+
+		for(int i = 0; i<batchState.getNumberOfRecords(); i++){
+			listModel.addElement(i+1);
+			FieldAndValues record = new FieldAndValues(batchState,i);
+			record.setRecordNumber(i);
+			recordValues.add(record);
+			record.setName(Integer.toString(i));
+			recordCards.add(record,i);
+		}
+
+		records = new JList(listModel);
+		records.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		records.addListSelectionListener(listSelectionListener);
+		this.add(records,BorderLayout.WEST);
+		this.add(recordCards,BorderLayout.CENTER);
+		this.revalidate();
+	}
+
+	@Override
+	public void selectField() {
+		for (Component comp : recordCards.getComponents()) {
+			if (comp.getName().equals(Integer.toString(batchState.getSelected().getRow()))) {
+				((FieldAndValues) comp).getValues().get(batchState.getSelected().getColumn()-1).grabFocus();
+			}
+		}
+	}
+
+	private ListSelectionListener listSelectionListener= new ListSelectionListener(){
+
+		@Override
+		public void valueChanged(ListSelectionEvent e) {
+			if(!e.getValueIsAdjusting()){
+				//Create new data 
+				ArrayList<ArrayList<TableEntryCell>> newData= new ArrayList<ArrayList<TableEntryCell>>();			
+				TableEntryCell tempCell = new TableEntryCell(batchState.getSelected().getValue(),Integer.parseInt(((JList)e.getSource()).getSelectedValue().toString())-1,batchState.getSelected().getColumn());
+				batchState.updateSelected(tempCell);
+			}
+		}
+
+	};
+
+
+	@Override
+	public void updateData(ArrayList<ArrayList<TableEntryCell>> data) {
+		// Iterate through each fieldAndValues and update their data and values. 
+		this.data = data;
+	}
+
+
+	@Override
+	public void updateSelected(TableEntryCell selectedCell) {
+		records.setSelectedIndex(batchState.getSelected().getRow());
+		CardLayout cl = (CardLayout)(recordCards.getLayout());
+		cl.show(recordCards,Integer.toString(batchState.getSelected().getRow()));
+
+	}
+
+
+	@Override
+	public void performLogout() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+}
